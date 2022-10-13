@@ -126,90 +126,92 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Card(
-              elevation: 5,
-              color: Colors.grey.shade200,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: 100,
-                  width: 300,
-                  child: Center(
-                    child: Text('P L A Y',style: TextStyle(
-                                fontSize: 60,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.pink.shade800
-                              ),),
-                  ),
-                ),
-              ),
-            ),
-
-            // question
-            Card(
-              elevation: 5,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: 100,
-                  width: 300,
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // question
-                        Text(
-                          '$numberA X $numberB = ',
-                           style: TextStyle(
-                                fontSize: 50,
-                                //fontWeight: FontWeight.bold,
-                                color: Colors.pink.shade800
-                              ),
-                        ),
-                        Text(
-                          userAnswer,
-                          style: TextStyle(
-                                fontSize: 50,
-                                //fontWeight: FontWeight.bold,
-                                color: Colors.pink.shade800
-                              ),
-                        ),
-                      ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Card(
+                elevation: 5,
+                color: Colors.grey.shade200,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 100,
+                    width: 300,
+                    child: Center(
+                      child: Text('P L A Y',style: TextStyle(
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.pink.shade800
+                                ),),
                     ),
                   ),
                 ),
               ),
-            ),
-
-            // number pad
-            Card(
-              color: Colors.grey.shade200,
-              elevation: 5,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: GridView.builder(
-                    itemCount: numberPad.length,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4,
+        
+              // question
+              Card(
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 100,
+                    width: 300,
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // question
+                          Text(
+                            '$numberA X $numberB = ',
+                             style: TextStyle(
+                                  fontSize: 50,
+                                  //fontWeight: FontWeight.bold,
+                                  color: Colors.pink.shade800
+                                ),
+                          ),
+                          Text(
+                            userAnswer,
+                            style: TextStyle(
+                                  fontSize: 50,
+                                  //fontWeight: FontWeight.bold,
+                                  color: Colors.pink.shade800
+                                ),
+                          ),
+                        ],
+                      ),
                     ),
-                    itemBuilder: (context, index) {
-                      return MyButton(
-                        child: numberPad[index],
-                        onTap: () => buttonTapped(numberPad[index]),
-                      );
-                    },
                   ),
                 ),
               ),
-            ),
-          ],
+        
+              // number pad
+              Card(
+                color: Colors.grey.shade200,
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 300,
+                    width: 300,
+                    child: GridView.builder(
+                      itemCount: numberPad.length,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 4,
+                      ),
+                      itemBuilder: (context, index) {
+                        return MyButton(
+                          child: numberPad[index],
+                          onTap: () => buttonTapped(numberPad[index]),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
