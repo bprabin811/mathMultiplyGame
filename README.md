@@ -1,4 +1,4 @@
-# Math Simple Math Game X Flutter.
+# Simple Math Game X Flutter.
 - ##
 -![sample!](sample.png)
 
