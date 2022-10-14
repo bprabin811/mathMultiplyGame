@@ -1,5 +1,4 @@
-# Math Simple Multiply Game X Flutter.
-[PLAY]()
+# Math Simple Math Game X Flutter.
 - ##
 -![sample!](sample.png)
 
