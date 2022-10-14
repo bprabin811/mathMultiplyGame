@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mathgametutorial/onboardingscreen.dart';
+import 'package:mathgametutorial/util/addition.dart';
 import 'home_page.dart';
 
 void main() {
@@ -10,10 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       title: 'MultiplyGame',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context)=> const OnBoardScreen(),
+        '/mul': (context)=> const HomePage(),
+        '/add': (context)=> const AdditionPage(),
+      },
+      //home: OnBoardScreen(),
     );
   }
 }

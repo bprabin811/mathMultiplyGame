@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:mathgametutorial/util/my_button.dart';
 import 'package:mathgametutorial/util/result_message.dart';
 
-class HomePage extends StatefulWidget {
-   const HomePage({Key? key,}) : super(key: key);
+class AdditionPage extends StatefulWidget {
+  const AdditionPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<AdditionPage> createState() => _AdditionPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _AdditionPageState extends State<AdditionPage> {
   // number pad list
   List<String> numberPad = [
     '7',
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
 
   // check if user is correct or not
   void checkResult() {
-    if (numberA * numberB == int.parse(userAnswer)) {
+    if (numberA + numberB == int.parse(userAnswer)) {
       showDialog(
           context: context,
           builder: (context) {
@@ -109,8 +109,8 @@ class _HomePageState extends State<HomePage> {
     });
 
     // create a new question
-    numberA = randomNumber.nextInt(20);
-    numberB = randomNumber.nextInt(10);
+    numberA = randomNumber.nextInt(100);
+    numberB = randomNumber.nextInt(50);
   }
 
   // GO BACK TO QUESTION
@@ -166,9 +166,9 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             // question
                             Text(
-                              '$numberA X $numberB = ',
+                              '$numberA + $numberB = ',
                                style: TextStyle(
-                                fontSize: 50,
+                                fontSize: 45,
                                 //fontWeight: FontWeight.bold,
                                 color: Colors.pink.shade800
                               ),
@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               userAnswer,
                               style: TextStyle(
-                                fontSize: 50,
+                                fontSize: 45,
                                 //fontWeight: FontWeight.bold,
                                 color: Colors.pink.shade800
                               ),
